@@ -32,7 +32,7 @@ public class UserEntity {
   @Column(name = "password", nullable = false)
   private String password;
 
-  @OneToOne(mappedBy = "user", fetch = FetchType.LAZY,
-      cascade = CascadeType.ALL)
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "user_info_id", referencedColumnName = "id")
   private UserInfoEntity userInfo;
 }

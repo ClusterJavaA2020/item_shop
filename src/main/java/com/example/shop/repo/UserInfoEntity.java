@@ -27,10 +27,10 @@ public class UserInfoEntity {
   private Long id;
   private String address;
   private int age;
+  @Column(name="`rank`")
   private int rank;
   private String phone;
 
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "user_id", nullable = false)
+  @OneToOne(mappedBy = "userInfo")
   private UserEntity user;
 }
